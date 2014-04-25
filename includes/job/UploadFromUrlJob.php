@@ -156,9 +156,10 @@ class UploadFromUrlJob extends Job {
 	 * @return mixed
 	 */
 	public static function &getSessionData( $key ) {
-		if ( !isset( $_SESSION[self::SESSION_KEYNAME][$key] ) ) {
-			$_SESSION[self::SESSION_KEYNAME][$key] = array();
+		$kn = self::SESSION_KEYNAME;
+		if ( !isset( $_SESSION[$kn][$key] ) ) {
+			$_SESSION[$kn][$key] = array();
 		}
-		return $_SESSION[self::SESSION_KEYNAME][$key];
+		return $_SESSION[$kn][$key];
 	}
 }

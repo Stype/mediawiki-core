@@ -22,20 +22,20 @@ $messages['en'] = array(
 	'asirra-failed' => 'Please identify all cat images',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (�Бела�уская (та�ашкевіца)�)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'asirra-desc' => 'Модуль Asirra для ConfirmEdit',
-	'asirra-edit' => 'Для абароны супраць спаму, калі ласка, выберыце толькі фота з катом ў полі ніжэй:',
-	'asirra-addurl' => 'Вашае рэдагаваньне ўтрымлівае новыя вонкавыя спасылкі. Для абароны супраць спаму, калі ласка, выберыце толькі фота з катом ў полі ніжэй:',
-	'asirra-badpass' => 'Для абароны супраць аўтаматычнага падбору паролю, калі ласка, выберыце толькі фота з катом ў полі ніжэй:',
-	'asirra-createaccount' => 'Для абароны супраць аўтаматычнага стварэньня рахункаў, калі ласка, выберыце толькі фота з катом ў полі ніжэй:',
-	'asirra-createaccount-fail' => 'Калі ласка, слушна выберыце катоў.',
-	'asirra-create' => 'Для абароны супраць аўтаматычнага стварэньня старонак, калі ласка, выберыце толькі фота з катом ў полі ніжэй:',
-	'asirra-nojs' => "'''Калі ласка, дазвольце JavaScript і дашліце старонку зноў.'''",
+	'asirra-edit' => 'Для аба�оны суп�аць спаму, калі ласка, выбе�ыце толькі фота з катом ў полі ніжэй:',
+	'asirra-addurl' => 'Вашае �эдагаваньне ўт�ымлівае новыя вонкавыя спасылкі. Для аба�оны суп�аць спаму, калі ласка, выбе�ыце толькі фота з катом ў полі ніжэй:',
+	'asirra-badpass' => 'Для аба�оны суп�аць аўтаматычнага падбо�у па�олю, калі ласка, выбе�ыце толькі фота з катом ў полі ніжэй:',
+	'asirra-createaccount' => 'Для аба�оны суп�аць аўтаматычнага ства�эньня �ахункаў, калі ласка, выбе�ыце толькі фота з катом ў полі ніжэй:',
+	'asirra-createaccount-fail' => 'Калі ласка, слушна выбе�ыце катоў.',
+	'asirra-create' => 'Для аба�оны суп�аць аўтаматычнага ства�эньня ста�онак, калі ласка, выбе�ыце толькі фота з катом ў полі ніжэй:',
+	'asirra-nojs' => "'''Калі ласка, дазвольце JavaScript і дашліце ста�онку зноў.'''",
 	'asirra-failed' => 'Калі ласка, вызначце ўсе выявы з катамі',
 );
 
@@ -54,7 +54,7 @@ $messages['de'] = array(
 	'asirra-failed' => 'Bitte wähle nur die Fotos mit Katzen aus.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (�Deutsch (Sie-Form)�)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -71,7 +71,7 @@ $messages['de-formal'] = array(
  */
 $messages['fr'] = array(
 	'asirra-desc' => 'Module Asirra pour ConfirmEdit',
-	'asirra-edit' => 'Pour aider à nous protéger contre le spam d’édition automatique, veuillez sélectionner uniquement les photos de chats dans la boîte ci-dessous :',
+	'asirra-edit' => 'Pour aider à nous protéger contre le spam dédition automatique, veuillez sélectionner uniquement les photos de chats dans la boîte ci-dessous :',
 	'asirra-addurl' => 'Votre édition contient des liens externes. Pour nous aider à nous protéger contre le spam automatique, veuillez sélectionner uniquement les photos de chats dans la boîte ci-dessous :',
 	'asirra-badpass' => 'Pour nous aider à nous protéger des essais automatiques de cassage de mot de passe, veuillez sélectionner uniquement les photos de chats dans la boîte ci-dessous :',
 	'asirra-createaccount' => 'Pour nous aider à nous protéger contre la création automatique de comptes, veuillez sélectionner uniquement les photos de chats dans la boîte ci-dessous :',
@@ -100,12 +100,12 @@ $messages['gl'] = array(
  */
 $messages['hsb'] = array(
 	'asirra-desc' => 'Modul Asirra za ConfirmEdit',
-	'asirra-edit' => 'Za škit přećiwo awtomatizowanemu spamej, prošu wubjer jenož fota kóčkow w slědowacym polu:',
-	'asirra-addurl' => 'Twoja změna wobsahuje nowe eksterne wotkazy. Za škit přećiwo awtomatizowanemu spamej, prošu wubjer jenož fota kóčkow w slědowacym polu:',
-	'asirra-badpass' => 'Za škit přećiwo awtomatizowanemu złamanju hesłow, prošu wubjer jenož fota kóčkow w slědowacym polu:',
-	'asirra-createaccount' => 'Za škit přećiwo awtomatiskemu wutworjenju konta, prošu wubjer jenož fota kóčkow w slědowacym polu:',
+	'asirra-edit' => 'Za škit p�ećiwo awtomatizowanemu spamej, prošu wubjer jenož fota kóčkow w slědowacym polu:',
+	'asirra-addurl' => 'Twoja změna wobsahuje nowe eksterne wotkazy. Za škit p�ećiwo awtomatizowanemu spamej, prošu wubjer jenož fota kóčkow w slědowacym polu:',
+	'asirra-badpass' => 'Za škit p�ećiwo awtomatizowanemu złamanju hesłow, prošu wubjer jenož fota kóčkow w slědowacym polu:',
+	'asirra-createaccount' => 'Za škit p�ećiwo awtomatiskemu wutworjenju konta, prošu wubjer jenož fota kóčkow w slědowacym polu:',
 	'asirra-createaccount-fail' => 'Prošu identifikuj kóčki.',
-	'asirra-create' => 'Za škit přećiwo awtomatiskemu wutworjenju strony, prošu wubjer jenož fota kóčkow w slědowacym polu:',
+	'asirra-create' => 'Za škit p�ećiwo awtomatiskemu wutworjenju strony, prošu wubjer jenož fota kóčkow w slědowacym polu:',
 	'asirra-nojs' => "'''Prošu zmóžń JavaScript a składuj stronu hišće raz.'''",
 	'asirra-failed' => 'Prošu identifikuj wšě wobrazy z kóčkami',
 );
@@ -140,18 +140,18 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'asirra-desc' => 'Asirra-модул за ПотврдиУредување',
-	'asirra-edit' => 'Како заштитна мерка против автоматизиран спам, изберете ги само сликите со мачка прикажани во полето:',
-	'asirra-addurl' => 'Во вашите измени има нови надворешни врски. Како заштитна мерка против автоматизиран спам, изберете ги само сликите со мачка прикажани во полето:',
-	'asirra-badpass' => 'Како заштитна мерка против автоматизирано провалување на лозинки, изберете ги само сликите со мачка прикажани во полето:',
-	'asirra-createaccount' => 'Како заштитна мерка против автоматизирано создавање на сметки, изберете ги само сликите со мачка прикажани во полето:',
+	'asirra-desc' => 'Asirra-модул за Потв�диУ�едување',
+	'asirra-edit' => 'Како заштитна ме�ка п�отив автоматизи�ан спам, избе�ете ги само сликите со мачка п�икажани во полето:',
+	'asirra-addurl' => 'Во вашите измени има нови надво�ешни в�ски. Како заштитна ме�ка п�отив автоматизи�ан спам, избе�ете ги само сликите со мачка п�икажани во полето:',
+	'asirra-badpass' => 'Како заштитна ме�ка п�отив автоматизи�ано п�овалување на лозинки, избе�ете ги само сликите со мачка п�икажани во полето:',
+	'asirra-createaccount' => 'Како заштитна ме�ка п�отив автоматизи�ано создавање на сметки, избе�ете ги само сликите со мачка п�икажани во полето:',
 	'asirra-createaccount-fail' => 'Посочете кои од следниве се мачки.',
-	'asirra-create' => 'Како заштитна мерка против автоматизирано создавање на страници, изберете ги само сликите со мачка прикажани во полето:',
-	'asirra-nojs' => "'''Овозможете JavaScript и поднесете ја страницата повторно.'''",
-	'asirra-failed' => 'Изберете ги сликите што имаат мачка',
+	'asirra-create' => 'Како заштитна ме�ка п�отив автоматизи�ано создавање на ст�аници, избе�ете ги само сликите со мачка п�икажани во полето:',
+	'asirra-nojs' => "'''Овозможете JavaScript и поднесете ја ст�аницата повто�но.'''",
+	'asirra-failed' => 'Избе�ете ги сликите што имаат мачка',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål)� (�Norsk (bokmål)�)
  * @author Event
  */
 $messages['nb'] = array(
@@ -211,18 +211,18 @@ $messages['pt'] = array(
 	'asirra-nojs' => "'''Possibilite o uso de JavaScript e reenvie a página, por favor.'''",
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (�中文(�体)�)
  * @author Hzy980512
  */
 $messages['zh-hans'] = array(
 	'asirra-desc' => 'ConfirmEdit的Asirra模块',
-	'asirra-edit' => '为了防止垃圾编辑攻击，请在下面的方框中选出猫的图片：',
-	'asirra-addurl' => '您的编辑包含新的外部链接。为了帮助防止自动垃圾邮件，请在下面的方框中选出猫的图片：',
-	'asirra-badpass' => '为防止自动程序破解密码，请在下面的方框中选出猫的图片：',
-	'asirra-createaccount' => '为了防止自动程序创建帐户，请在下面的方框中选出猫的图片：',
-	'asirra-createaccount-fail' => '请正确辨认出猫的图片。',
-	'asirra-create' => '为了防止自动程序创建页面，请在下面的方框中选出猫的图片：',
-	'asirra-nojs' => "'''请启动JavaScript后再提交页面。'''",
-	'asirra-failed' => '请选出所有猫的图片',
+	'asirra-edit' => '为了防止垃圾编辑攻击，请在下面的方框中�出猫的图片：',
+	'asirra-addurl' => '您的编辑包含新的外部链接�为了帮助防止自动垃圾邮件，请在下面的方框中�出猫的图片：',
+	'asirra-badpass' => '为防止自动程序破解密码，请在下面的方框中�出猫的图片：',
+	'asirra-createaccount' => '为了防止自动程序创建帐户，请在下面的方框中�出猫的图片：',
+	'asirra-createaccount-fail' => '请正确辨认出猫的图片�',
+	'asirra-create' => '为了防止自动程序创建页面，请在下面的方框中�出猫的图片：',
+	'asirra-nojs' => "'''请启动JavaScript后再提交页面�'''",
+	'asirra-failed' => '请�出�有猫的图片',
 );
 

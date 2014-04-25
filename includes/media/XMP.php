@@ -348,11 +348,6 @@ class XMPReader {
 	* does nothing if we're in MODE_IGNORE or if the data is whitespace
 	* throws an error if we're not in MODE_SIMPLE (as we're not allowed to have character
 	* data in the other modes).
-	*
-	* As an example, this happens when we encounter XMP like:
-	* <exif:DigitalZoomRatio>0/10</exif:DigitalZoomRatio>
-	* and are processing the 0/10 bit.
-	*
 	* @param $parser XMLParser reference to the xml parser
 	* @param $data String Character data
 	* @throws MWException on invalid data
@@ -407,13 +402,6 @@ class XMPReader {
 	* property value, and now have to save the result to the
 	* results array
 	*
-	* For example, when processing:
-	* <exif:DigitalZoomRatio>0/10</exif:DigitalZoomRatio>
-	* this deals with when we hit </exif:DigitalZoomRatio>.
-	*
-	* Or it could be if we hit the end element of a property
-	* of a compound data structure (like a member of an array).
-	*
 	* @param $elm String namespace, space, and tag name.
 	*/
 	private function endElementModeSimple ( $elm ) {
@@ -438,14 +426,6 @@ class XMPReader {
 	* Hit a closing element in MODE_STRUCT, MODE_SEQ, MODE_BAG
 	* generally means we've finished processing a nested structure.
 	* resets some internal variables to indicate that.
-	*
-	* Note this means we hit the </closing element> not the </rdf:Seq>.
-	*
-	* For example, when processing:
-	* <exif:ISOSpeedRatings> <rdf:Seq> <rdf:li>64</rdf:li>
-	*   </rdf:Seq> </exif:ISOSpeedRatings>
-	*
-	* This method is called when we hit the </exif:ISOSpeedRatings> tag.
 	*
 	* @param $elm String namespace . space . tag name.
 	*/
@@ -501,15 +481,6 @@ class XMPReader {
 	* Hit a closing element in MODE_LI (either rdf:Seq, or rdf:Bag )
 	* Add information about what type of element this is.
 	*
-	* Note we still have to hit the outer </property>
-	*
-	* For example, when processing:
-	* <exif:ISOSpeedRatings> <rdf:Seq> <rdf:li>64</rdf:li>
-	*   </rdf:Seq> </exif:ISOSpeedRatings>
-	*
-	* This method is called when we hit the </rdf:Seq>.
-	* (For comparison, we call endElementModeSimple when we
-	* hit the </rdf:li>)
 	*
 	* @param $elm String namespace . ' ' . element name
 	*/
@@ -668,10 +639,6 @@ class XMPReader {
 
 	/**
 	*  Start element in MODE_BAG (unordered array)
-	* this should always be <rdf:Bag>
-	*
-	* @param $elm String namespace . ' ' . tag
-	* @throws MWException if we have an element that's not <rdf:Bag>
 	*/
 	private function startElementModeBag( $elm ) {
 		if ( $elm === self::NS_RDF . ' Bag' ) {
@@ -684,10 +651,6 @@ class XMPReader {
 
 	/**
 	* Start element in MODE_SEQ (ordered array)
-	* this should always be <rdf:Seq>
-	*
-	* @param $elm String namespace . ' ' . tag
-	* @throws MWException if we have an element that's not <rdf:Seq>
 	*/
 	private function startElementModeSeq( $elm ) {
 		if ( $elm === self::NS_RDF . ' Seq' ) {
@@ -705,17 +668,8 @@ class XMPReader {
 
 	/**
 	* Start element in MODE_LANG (language alternative)
-	* this should always be <rdf:Alt>
-	*
-	* This tag tends to be used for metadata like describe this
-	* picture, which can be translated into multiple languages.
-	*
-	* XMP supports non-linguistic alternative selections,
-	* which are really only used for thumbnails, which
-	* we don't care about.
 	*
 	* @param $elm String namespace . ' ' . tag
-	* @throws MWException if we have an element that's not <rdf:Alt>
 	*/
 	private function startElementModeLang( $elm ) {
 		if ( $elm === self::NS_RDF . ' Alt' ) {
@@ -733,12 +687,6 @@ class XMPReader {
 	* already opened has a child element. Could happen for a
 	* qualified element.
 	*
-	* For example:
-	* <exif:DigitalZoomRatio><rdf:Description><rdf:value>0/10</rdf:value>
-	*   <foo:someQualifier>Bar</foo:someQualifier> </rdf:Description>
-	*   </exif:DigitalZoomRatio>
-	*
-	* This method is called when processing the <rdf:Description> element
 	*
 	* @param $elm String namespace and tag names separated by space.
 	* @param $attribs Array Attributes of the element.
@@ -771,12 +719,6 @@ class XMPReader {
 	* Start an element when in MODE_QDESC.
 	* This generally happens when a simple element has an inner
 	* rdf:Description to hold qualifier elements.
-	*
-	* For example in:
-	* <exif:DigitalZoomRatio><rdf:Description><rdf:value>0/10</rdf:value>
-	*   <foo:someQualifier>Bar</foo:someQualifier> </rdf:Description>
-	*   </exif:DigitalZoomRatio>
-	* Called when processing the <rdf:value> or <foo:someQualifier>.
 	*
 	* @param $elm String namespace and tag name separated by a space.
 	*
@@ -850,13 +792,6 @@ class XMPReader {
 	*
 	* Example of a struct (abbreviated; flash has more properties):
 	*
-	* <exif:Flash> <rdf:Description> <exif:Fired>True</exif:Fired>
-	*  <exif:Mode>1</exif:Mode></rdf:Description></exif:Flash>
-	*
-	* or:
-	*
-	* <exif:Flash rdf:parseType='Resource'> <exif:Fired>True</exif:Fired>
-	*  <exif:Mode>1</exif:Mode></exif:Flash>
 	*
 	* @param $ns String namespace
 	* @param $tag String tag name (no ns)
@@ -899,15 +834,6 @@ class XMPReader {
 	/**
 	* opening element in MODE_LI
 	* process elements of arrays.
-	*
-	* Example:
-	* <exif:ISOSpeedRatings> <rdf:Seq> <rdf:li>64</rdf:li>
-	*   </rdf:Seq> </exif:ISOSpeedRatings>
-	* This method is called when we hit the <rdf:li> element.
-	*
-	* @param $elm String: namespace . ' ' . tagname
-	* @param $attribs Array: Attributes. (needed for BAGSTRUCTS)
-	* @throws MWException if gets a tag other than <rdf:li>
 	*/
 	private function startElementModeLi( $elm, $attribs ) {
 		if ( ( $elm ) !== self::NS_RDF . ' li' ) {
@@ -950,16 +876,6 @@ class XMPReader {
 	/**
 	* Opening element in MODE_LI_LANG.
 	* process elements of language alternatives
-	*
-	* Example:
-	* <dc:title> <rdf:Alt> <rdf:li xml:lang="x-default">My house
-	*  </rdf:li> </rdf:Alt> </dc:title>
-	*
-	* This method is called when we hit the <rdf:li> element.
-	*
-	* @param $elm String namespace . ' ' . tag
-	* @param $attribs array array of elements (most importantly xml:lang)
-	* @throws MWException if gets a tag other than <rdf:li> or if no xml:lang
 	*/
 	private function startElementModeLiLang( $elm, $attribs ) {
 		if ( $elm !== self::NS_RDF . ' li' ) {
@@ -986,10 +902,6 @@ class XMPReader {
 	* Hits an opening element.
 	* Generally just calls a helper based on what MODE we're in.
 	* Also does some initial set up for the wrapper element
-	*
-	* @param $parser XMLParser
-	* @param $elm String namespace <space> element
-	* @param $attribs Array attribute name => value
 	*/
 	function startElement( $parser, $elm, $attribs ) {
 
@@ -1071,11 +983,6 @@ class XMPReader {
 	* Process attributes.
 	* Simple values can be stored as either a tag or attribute
 	*
-	* Often the initial <rdf:Description> tag just has all the simple
-	* properties as attributes.
-	*
-	* Example:
-	* <rdf:Description rdf:about="" xmlns:exif="http://ns.adobe.com/exif/1.0/" exif:DigitalZoomRatio="0/10">
 	*
 	* @param $attribs Array attribute=>value array.
 	*/

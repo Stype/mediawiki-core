@@ -314,7 +314,7 @@ abstract class Skin extends ContextSource {
 	}
 
 	/**
-	 * Make a <script> tag containing global variables
+	 * Make a script tag containing global variables
 	 *
 	 * @deprecated in 1.19
 	 * @param $unused Unused
@@ -385,7 +385,7 @@ abstract class Skin extends ContextSource {
 
 	/**
 	 * This will be called by OutputPage::headElement when it is creating the
-	 * <body> tag, skins can override it if they have a need to add in any
+	 * body tag, skins can override it if they have a need to add in any
 	 * body attributes or classes of their own.
 	 * @param $out OutputPage
 	 * @param $bodyAttrs Array
@@ -624,7 +624,7 @@ abstract class Skin extends ContextSource {
 	}
 
 	/**
-	 * This gets called shortly before the </body> tag.
+	 * This gets called shortly before the body tag.
 	 *
 	 * @return String HTML-wrapped JS code to be put before </body>
 	 */

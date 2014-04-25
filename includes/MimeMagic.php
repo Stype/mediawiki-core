@@ -24,50 +24,50 @@
  * appending MM_WELL_KNOWN_MIME_TYPES behind $wgMimeTypeFile, but who knows
  * what will break? In practice this probably isn't a problem anyway -- Bryan)
  */
-define('MM_WELL_KNOWN_MIME_TYPES',<<<END_STRING
-application/ogg ogx ogg ogm ogv oga spx
-application/pdf pdf
-application/vnd.oasis.opendocument.chart odc
-application/vnd.oasis.opendocument.chart-template otc
-application/vnd.oasis.opendocument.database odb
-application/vnd.oasis.opendocument.formula odf
-application/vnd.oasis.opendocument.formula-template otf
-application/vnd.oasis.opendocument.graphics odg
-application/vnd.oasis.opendocument.graphics-template otg
-application/vnd.oasis.opendocument.image odi
-application/vnd.oasis.opendocument.image-template oti
-application/vnd.oasis.opendocument.presentation odp
-application/vnd.oasis.opendocument.presentation-template otp
-application/vnd.oasis.opendocument.spreadsheet ods
-application/vnd.oasis.opendocument.spreadsheet-template ots
-application/vnd.oasis.opendocument.text odt
-application/vnd.oasis.opendocument.text-master otm
-application/vnd.oasis.opendocument.text-template ott
-application/vnd.oasis.opendocument.text-web oth
-application/x-javascript js
-application/x-shockwave-flash swf
-audio/midi mid midi kar
-audio/mpeg mpga mpa mp2 mp3
-audio/x-aiff aif aiff aifc
-audio/x-wav wav
-audio/ogg oga spx ogg
-image/x-bmp bmp
-image/gif gif
-image/jpeg jpeg jpg jpe
-image/png png
-image/svg+xml svg 
-image/svg svg
-image/tiff tiff tif
-image/vnd.djvu djvu
-image/x.djvu djvu
-image/x-djvu djvu
-image/x-portable-pixmap ppm
-image/x-xcf xcf
-text/plain txt
-text/html html htm
-video/ogg ogv ogm ogg
-video/mpeg mpg mpeg
-END_STRING
+define('MM_WELL_KNOWN_MIME_TYPES',"
+application/ogg ogx ogg ogm ogv oga spx\
+application/pdf pdf\
+application/vnd.oasis.opendocument.chart odc\
+application/vnd.oasis.opendocument.chart-template otc\
+application/vnd.oasis.opendocument.database odb\
+application/vnd.oasis.opendocument.formula odf\
+application/vnd.oasis.opendocument.formula-template otf\
+application/vnd.oasis.opendocument.graphics odg\
+application/vnd.oasis.opendocument.graphics-template otg\
+application/vnd.oasis.opendocument.image odi\
+application/vnd.oasis.opendocument.image-template oti\
+application/vnd.oasis.opendocument.presentation odp\
+application/vnd.oasis.opendocument.presentation-template otp\
+application/vnd.oasis.opendocument.spreadsheet ods\
+application/vnd.oasis.opendocument.spreadsheet-template ots\
+application/vnd.oasis.opendocument.text odt\
+application/vnd.oasis.opendocument.text-master otm\
+application/vnd.oasis.opendocument.text-template ott\
+application/vnd.oasis.opendocument.text-web oth\
+application/x-javascript js\
+application/x-shockwave-flash swf\
+audio/midi mid midi kar\
+audio/mpeg mpga mpa mp2 mp3\
+audio/x-aiff aif aiff aifc\
+audio/x-wav wav\
+audio/ogg oga spx ogg\
+image/x-bmp bmp\
+image/gif gif\
+image/jpeg jpeg jpg jpe\
+image/png png\
+image/svg+xml svg \
+image/svg svg\
+image/tiff tiff tif\
+image/vnd.djvu djvu\
+image/x.djvu djvu\
+image/x-djvu djvu\
+image/x-portable-pixmap ppm\
+image/x-xcf xcf\
+text/plain txt\
+text/html html htm\
+video/ogg ogv ogm ogg\
+video/mpeg mpg mpeg\
+"
 );
 
 /**
@@ -76,47 +76,47 @@ END_STRING
  * An extensive list of well known mime types is provided by
  * the file mime.info in the includes directory.
  */
-define('MM_WELL_KNOWN_MIME_INFO', <<<END_STRING
-application/pdf [OFFICE]
-application/vnd.oasis.opendocument.chart [OFFICE]
-application/vnd.oasis.opendocument.chart-template [OFFICE]
-application/vnd.oasis.opendocument.database [OFFICE]
-application/vnd.oasis.opendocument.formula [OFFICE]
-application/vnd.oasis.opendocument.formula-template [OFFICE]
-application/vnd.oasis.opendocument.graphics [OFFICE]
-application/vnd.oasis.opendocument.graphics-template [OFFICE]
-application/vnd.oasis.opendocument.image [OFFICE]
-application/vnd.oasis.opendocument.image-template [OFFICE]
-application/vnd.oasis.opendocument.presentation [OFFICE]
-application/vnd.oasis.opendocument.presentation-template [OFFICE]
-application/vnd.oasis.opendocument.spreadsheet [OFFICE]
-application/vnd.oasis.opendocument.spreadsheet-template [OFFICE]
-application/vnd.oasis.opendocument.text [OFFICE]
-application/vnd.oasis.opendocument.text-template [OFFICE]
-application/vnd.oasis.opendocument.text-master [OFFICE]
-application/vnd.oasis.opendocument.text-web [OFFICE]
-text/javascript application/x-javascript [EXECUTABLE]
-application/x-shockwave-flash [MULTIMEDIA]
-audio/midi [AUDIO]
-audio/x-aiff [AUDIO]
-audio/x-wav [AUDIO]
-audio/mp3 audio/mpeg [AUDIO]
-application/ogg audio/ogg video/ogg [MULTIMEDIA]
-image/x-bmp image/x-ms-bmp image/bmp [BITMAP]
-image/gif [BITMAP]
-image/jpeg [BITMAP]
-image/png [BITMAP]
-image/svg+xml [DRAWING]
-image/tiff [BITMAP]
-image/vnd.djvu [BITMAP]
-image/x-xcf [BITMAP]
-image/x-portable-pixmap [BITMAP]
-text/plain [TEXT]
-text/html [TEXT]
-video/ogg [VIDEO]
-video/mpeg [VIDEO]
-unknown/unknown application/octet-stream application/x-empty [UNKNOWN]
-END_STRING
+define('MM_WELL_KNOWN_MIME_INFO', " \
+application/pdf [OFFICE]\
+application/vnd.oasis.opendocument.chart [OFFICE]\
+application/vnd.oasis.opendocument.chart-template [OFFICE]\
+application/vnd.oasis.opendocument.database [OFFICE]\
+application/vnd.oasis.opendocument.formula [OFFICE]\
+application/vnd.oasis.opendocument.formula-template [OFFICE]\
+application/vnd.oasis.opendocument.graphics [OFFICE]\
+application/vnd.oasis.opendocument.graphics-template [OFFICE]\
+application/vnd.oasis.opendocument.image [OFFICE]\
+application/vnd.oasis.opendocument.image-template [OFFICE]\
+application/vnd.oasis.opendocument.presentation [OFFICE]\
+application/vnd.oasis.opendocument.presentation-template [OFFICE]\
+application/vnd.oasis.opendocument.spreadsheet [OFFICE]\
+application/vnd.oasis.opendocument.spreadsheet-template [OFFICE]\
+application/vnd.oasis.opendocument.text [OFFICE]\
+application/vnd.oasis.opendocument.text-template [OFFICE]\
+application/vnd.oasis.opendocument.text-master [OFFICE]\
+application/vnd.oasis.opendocument.text-web [OFFICE]\
+text/javascript application/x-javascript [EXECUTABLE]\
+application/x-shockwave-flash [MULTIMEDIA]\
+audio/midi [AUDIO]\
+audio/x-aiff [AUDIO]\
+audio/x-wav [AUDIO]\
+audio/mp3 audio/mpeg [AUDIO]\
+application/ogg audio/ogg video/ogg [MULTIMEDIA]\
+image/x-bmp image/x-ms-bmp image/bmp [BITMAP]\
+image/gif [BITMAP]\
+image/jpeg [BITMAP]\
+image/png [BITMAP]\
+image/svg+xml [DRAWING]\
+image/tiff [BITMAP]\
+image/vnd.djvu [BITMAP]\
+image/x-xcf [BITMAP]\
+image/x-portable-pixmap [BITMAP]\
+text/plain [TEXT]\
+text/html [TEXT]\
+video/ogg [VIDEO]\
+video/mpeg [VIDEO]\
+unknown/unknown application/octet-stream application/x-empty [UNKNOWN]\
+"
 );
 
 /**

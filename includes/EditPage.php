@@ -2137,14 +2137,14 @@ class EditPage {
 	protected function showFormBeforeText() {
 		global $wgOut;
 		$section = htmlspecialchars( $this->section );
-		$wgOut->addHTML( <<<HTML
-<input type='hidden' value="{$section}" name="wpSection" />
-<input type='hidden' value="{$this->starttime}" name="wpStarttime" />
-<input type='hidden' value="{$this->edittime}" name="wpEdittime" />
-<input type='hidden' value="{$this->scrolltop}" name="wpScrolltop" id="wpScrolltop" />
+		$wgOut->addHTML( "<input type='hidden' value=\"{$section}\" name=\"wpSection\" /><input type='hidden' value=\"{$this->starttime}\" name=\"wpStarttime\" /><input type='hidden' value=\"{$this->edittime}\" name=\"wpEdittime\" /><input type='hidden' value=\"{$this->scrolltop}\" name=\"wpScrolltop\" id=\"wpScrolltop\" /> ");
 
-HTML
-		);
+
+
+
+
+
+
 		if ( !$this->checkUnicodeCompliantBrowser() )
 			$wgOut->addHTML(Html::hidden( 'safemode', '1' ));
 	}

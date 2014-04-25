@@ -342,11 +342,11 @@ class LanguageConverter {
 		// this one is needed when the text is inside an HTML markup
 		$htmlfix = '|<[^>]+$|^[^<>]*>';
 
-		// disable convert to variants between <code></code> tags
+		// disable convert to variants between code tags
 		$codefix = '<code>.+?<\/code>|';
-		// disable convertsion of <script type="text/javascript"> ... </script>
+		// disable convertsion of script
 		$scriptfix = '<script.*?>.*?<\/script>|';
-		// disable conversion of <pre xxxx> ... </pre>
+		// disable conversion of pre
 		$prefix = '<pre.*?>.*?<\/pre>|';
 
 		$reg = '/' . $codefix . $scriptfix . $prefix .

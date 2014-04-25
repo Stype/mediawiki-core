@@ -448,17 +448,17 @@ class ImagePage extends Article {
 
 				if ( !$this->displayImg->isSafeFile() ) {
 					$warning = wfMsgNoTrans( 'mediawarning' );
-					$wgOut->addWikiText( <<<EOT
-<div class="fullMedia"><span class="dangerousLink">{$medialink}</span>$dirmark <span class="fileInfo">$longDesc</span></div>
-<div class="mediaWarning">$warning</div>
-EOT
-						);
+					$wgOut->addWikiText( "<div class=\"fullMedia\"><span class=\"dangerousLink\">{$medialink}</span>$dirmark <span class=\"fileInfo\">$longDesc</span></div><div class=\"mediaWarning\">$warning</div> ");
+
+
+
+
 				} else {
-					$wgOut->addWikiText( <<<EOT
-<div class="fullMedia">{$medialink}{$dirmark} <span class="fileInfo">$longDesc</span>
-</div>
-EOT
-					);
+					$wgOut->addWikiText( "<div class=\"fullMedia\">{$medialink}{$dirmark} <span class=\"fileInfo\">$longDesc</span></div>" );
+
+
+
+
 				}
 			}
 

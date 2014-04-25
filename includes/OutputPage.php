@@ -389,7 +389,7 @@ class OutputPage extends ContextSource {
 	/**
 	 * Add a self-contained script tag with the given contents
 	 *
-	 * @param $script String: JavaScript text, no <script> tags
+	 * @param $script String: JavaScript text, no script tags
 	 */
 	public function addInlineScript( $script ) {
 		$this->mScripts .= Html::inlineScript( "\n$script\n" ) . "\n";

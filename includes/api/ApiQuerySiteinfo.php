@@ -444,7 +444,7 @@ class ApiQuerySiteinfo extends ApiQueryBase {
 				if ( isset( $ext['version'] ) ) {
 						$ret['version'] = $ext['version'];
 				} elseif ( isset( $ext['svn-revision'] ) &&
-					preg_match( '/\$(?:Rev|LastChangedRevision|Revision): *(\d+)/',
+					preg_match( '/STATIC STRING/',
 						$ext['svn-revision'], $m ) )
 				{
 						$ret['version'] = 'r' . $m[1];

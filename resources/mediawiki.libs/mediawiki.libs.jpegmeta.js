@@ -484,14 +484,14 @@
 	    0xcc: ["DAC", null, "Define arithmetic coding conditioning(s)"],
 	    
 	    /* Restart interval termination" */
-	    0xd0: ["RST0", null, "Restart with modulo 8 count “0”"],
-	    0xd1: ["RST1", null, "Restart with modulo 8 count “1”"],
-	    0xd2: ["RST2", null, "Restart with modulo 8 count “2”"],
-	    0xd3: ["RST3", null, "Restart with modulo 8 count “3”"],
-	    0xd4: ["RST4", null, "Restart with modulo 8 count “4”"],
-	    0xd5: ["RST5", null, "Restart with modulo 8 count “5”"],
-	    0xd6: ["RST6", null, "Restart with modulo 8 count “6”"],
-	    0xd7: ["RST7", null, "Restart with modulo 8 count “7”"],
+	    0xd0: ["RST0", null, "Restart with modulo 8 count \"0\""],
+	    0xd1: ["RST1", null, "Restart with modulo 8 count \"1\""],
+	    0xd2: ["RST2", null, "Restart with modulo 8 count \"2\""],
+	    0xd3: ["RST3", null, "Restart with modulo 8 count \"3\""],
+	    0xd4: ["RST4", null, "Restart with modulo 8 count \"4\""],
+	    0xd5: ["RST5", null, "Restart with modulo 8 count \"5\""],
+	    0xd6: ["RST6", null, "Restart with modulo 8 count \"6\""],
+	    0xd7: ["RST7", null, "Restart with modulo 8 count \"7\""],
 	    
 	    /* Other markers */
 	    0xd8: ["SOI", null, "Start of image"],

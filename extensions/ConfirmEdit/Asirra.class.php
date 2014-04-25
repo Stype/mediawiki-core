@@ -21,10 +21,10 @@ class Asirra extends SimpleCaptcha {
 		$js = Html::linkedScript( $this->asirra_clientscript );
 
 		$message = Xml::encodeJsVar( wfMessage( 'asirra-createaccount-fail' )->plain() );
-		$js .= Html::inlineScript( <<<JAVASCRIPT
-var asirra_js_failed = '$message';
-JAVASCRIPT
-		);
+		$js .= Html::inlineScript( "var asirra_js_failed = '$message';" );
+
+
+
 		$js .=  '<noscript>' . wfMessage( 'asirra-nojs' )->parse() . '</noscript>';
 		return $js;
 	}
