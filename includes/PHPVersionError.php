@@ -32,11 +32,11 @@ function wfPHPVersionError( $type ){
 		header( 'Cache-control: none' );
 		header( 'Pragma: nocache' );
 
-		$finalOutput = <<<HTML
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns='http://www.w3.org/1999/xhtml' lang='en'>
-	<head>
-		<title>MediaWiki {$mwVersion}</title>
+		$finalOutput = "\
+<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\
+<html xmlns='http://www.w3.org/1999/xhtml' lang='en'>\
+	<head>\
+		<title>MediaWiki {$mwVersion}</title>\
 		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 		<style type='text/css' media='screen'>
 			body {
@@ -56,28 +56,28 @@ function wfPHPVersionError( $type ){
 		</style>
 	</head>
 	<body>
-		<img src="{$encLogo}" alt='The MediaWiki logo' />
+		<img src=\"{$encLogo}\" alt='The MediaWiki logo' />
 		<h1>MediaWiki {$mwVersion} internal error</h1>
 		<div class='error'>
 		<p>
 			{$message}
 		</p>
 		<p>
-			Please consider <a href="http://www.php.net/downloads.php">upgrading your copy of PHP</a>.
+			Please consider <a href=\"http://www.php.net/downloads.php\">upgrading your copy of PHP</a>.
 			PHP versions less than 5.3.0 are no longer supported by the PHP Group and will not receive
 			security or bugfix updates.
 		</p>
 		<p>
 			If for some reason you are unable to upgrade your PHP version, you will need to
-			<a href="http://www.mediawiki.org/wiki/Download">download</a> an older version
+			<a href=\"http://www.mediawiki.org/wiki/Download\">download</a> an older version
 			of MediaWiki from our website.  See our
-			<a href="http://www.mediawiki.org/wiki/Compatibility#PHP">compatibility page</a>
+			<a href=\"http://www.mediawiki.org/wiki/Compatibility#PHP\">compatibility page</a>
 			for details of which versions are compatible with prior versions of PHP.
 		</p>
 		</div>
 	</body>
 </html>
-HTML;
+";
 	// Handle everything that's not index.php
 	} else {
 		// So nothing thinks this is JS or CSS

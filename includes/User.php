@@ -61,9 +61,9 @@ class User {
 	 * Global constants made accessible as class constants so that autoloader
 	 * magic can be used.
 	 */
-	const USER_TOKEN_LENGTH = USER_TOKEN_LENGTH;
-	const MW_USER_VERSION = MW_USER_VERSION;
-	const EDIT_TOKEN_SUFFIX = EDIT_TOKEN_SUFFIX;
+	#const USER_TOKEN_LENGTH = USER_TOKEN_LENGTH;
+	#const MW_USER_VERSION = MW_USER_VERSION;
+	#const EDIT_TOKEN_SUFFIX = EDIT_TOKEN_SUFFIX;
 
 	/**
 	 * Array of Strings List of member variables which are saved to the

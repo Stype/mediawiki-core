@@ -857,9 +857,9 @@ class WebRequest {
 	 * @return Mixed
 	 */
 	public function getSessionData( $key ) {
-		if( !isset( $_SESSION[$key] ) ) {
-			return null;
-		}
+		#if( !isset( $_SESSION[$key] ) ) {
+		#	return null;
+		#}
 		return $_SESSION[$key];
 	}
 
@@ -911,7 +911,7 @@ class WebRequest {
 		header( 'Location: ' . $url );
 		header( 'Content-Type: text/html' );
 		$encUrl = htmlspecialchars( $url );
-		echo <<<HTML
+		echo "
 <html>
 <head>
 <title>Security redirect</title>
@@ -922,13 +922,13 @@ class WebRequest {
 We can't serve non-HTML content from the URL you have requested, because
 Internet Explorer would interpret it as an incorrect and potentially dangerous
 content type.</p>
-<p>Instead, please use <a href="$encUrl">this URL</a>, which is the same as the URL you have requested, except that
-"&amp;*" is appended. This prevents Internet Explorer from seeing a bogus file
+<p>Instead, please use <a href=\"$encUrl\">this URL</a>, which is the same as the URL you have requested, except that
+\"&amp;*\" is appended. This prevents Internet Explorer from seeing a bogus file
 extension.
 </p>
 </body>
 </html>
-HTML;
+";
 		echo "\n";
 		return true;
 	}

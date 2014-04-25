@@ -933,9 +933,10 @@ class JSParser
 				$n->condition = $this->ParenExpression($x);
 				if (!$x->ecmaStrictMode)
 				{
-					// <script language="JavaScript"> (without version hints) may need
-					// automatic semicolon insertion without a newline after do-while.
-					// See http://bugzilla.mozilla.org/show_bug.cgi?id=238945.
+
+
+
+
 					$this->t->match(OP_SEMICOLON);
 					return $n;
 				}
