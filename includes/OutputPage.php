@@ -337,7 +337,6 @@ class OutputPage extends ContextSource {
 	}
 
 	/**
-	 * Add raw HTML to the list of scripts (including \<script\> tag, etc.)
 	 *
 	 * @param $script String: raw HTML
 	 */
@@ -795,29 +794,19 @@ class OutputPage extends ContextSource {
 	}
 
 	/**
-	 * "Page title" means the contents of \<h1\>. It is stored as a valid HTML fragment.
-	 * This function allows good tags like \<sup\> in the \<h1\> tag, but not bad tags like \<script\>.
-	 * This function automatically sets \<title\> to the same content as \<h1\> but with all tags removed.
-	 * Bad tags that were escaped in \<h1\> will still be escaped in \<title\>, and good tags like \<i\> will be dropped entirely.
-	 *
-	 * @param $name string|Message
 	 */
 	public function setPageTitle( $name ) {
 		if ( $name instanceof Message ) {
 			$name = $name->setContext( $this->getContext() )->text();
 		}
 
-		# change "<script>foo&bar</script>" to "&lt;script&gt;foo&amp;bar&lt;/script&gt;"
-		# but leave "<i>foobar</i>" alone
 		$nameWithTags = Sanitizer::normalizeCharReferences( Sanitizer::removeHTMLtags( $name ) );
 		$this->mPagetitle = $nameWithTags;
 
-		# change "<i>foo&amp;bar</i>" to "foo&bar"
 		$this->setHTMLTitle( $this->msg( 'pagetitle' )->rawParams( Sanitizer::stripAllTags( $nameWithTags ) ) );
 	}
 
 	/**
-	 * Return the "page title", i.e. the content of the \<h1\> tag.
 	 *
 	 * @return String
 	 */
@@ -1612,7 +1601,7 @@ class OutputPage extends ContextSource {
 		$parsed = $this->parse( $text, $linestart, $interface );
 
 		$m = array();
-		if ( preg_match( '/^<p>(.*)\n?<\/p>\n?/sU', $parsed, $m ) ) {
+		if ( preg_match( '/^STATIC/sU', $parsed, $m ) ) {
 			$parsed = $m[1];
 		}
 
@@ -2376,7 +2365,7 @@ $templates
 	/**
 	 * @param $sk Skin The given Skin
 	 * @param $includeStyle Boolean: unused
-	 * @return String: The doctype, opening <html>, and head element.
+	 * @return String: The doctype, opening html, and head element.
 	 */
 	public function headElement( Skin $sk, $includeStyle = true ) {
 		global $wgContLang;
@@ -2496,13 +2485,6 @@ $templates
 	}
 
 	/**
-	 * TODO: Document
-	 * @param $modules Array/string with the module name(s)
-	 * @param $only String ResourceLoaderModule TYPE_ class constant
-	 * @param $useESI boolean
-	 * @param $extraQuery Array with extra query parameters to add to each request. array( param => value )
-	 * @param $loadCall boolean If true, output an (asynchronous) mw.loader.load() call rather than a <script src="..."> tag
-	 * @return string html <script> and <style> tags
 	 */
 	protected function makeResourceLoaderLink( $modules, $only, $useESI = false, array $extraQuery = array(), $loadCall = false ) {
 		global $wgResourceLoaderUseESI;
@@ -2711,20 +2693,17 @@ $templates
 	}
 
 	/**
-	 * JS stuff to put at the 'bottom', which can either be the bottom of the <body>
-	 * or the bottom of the <head> depending on $wgResourceLoaderExperimentalAsyncLoading:
+	 * JS stuff to put at the 'bottom', which can either be the bottom of the body
+	 * or the bottom of the head depending on $wgResourceLoaderExperimentalAsyncLoading:
 	 * modules marked with position 'bottom', legacy scripts ($this->mScripts),
 	 * user preferences, site JS and user JS
 	 *
-	 * @param $inHead boolean If true, this HTML goes into the <head>, if false it goes into the <body>
+	 * @param $inHead boolean If true, this HTML goes into the head, if false it goes into the <body>
 	 * @return string
 	 */
 	function getScriptsForBottomQueue( $inHead ) {
 		global $wgUseSiteJs, $wgAllowUserJs;
 
-		// Script and Messages "only" requests marked for bottom inclusion
-		// If we're in the <head>, use load() calls rather than <script src="..."> tags
-		// Messages should go first
 		$scripts = $this->makeResourceLoaderLink( $this->getModuleMessages( true, 'bottom' ),
 			ResourceLoaderModule::TYPE_MESSAGES, /* $useESI = */ false, /* $extraQuery = */ array(),
 			/* $loadCall = */ $inHead
